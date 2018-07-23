@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 # python diff_all.py ori1.txt ori2.txt
 from optparse import OptionParser
+import time
 
 def diff_all(input1, input2, output):
     # 改行位置は気にせず、2つのファイルのdiffを取る
@@ -21,22 +22,39 @@ def diff_all(input1, input2, output):
         in2.get(l.rstrip())
         in2[l.rstrip()] = 0
     
-    f_out.write('===ここから1ファイル目にのみ存在==='+'\n')
-    print('===ここから1ファイル目にのみ存在===')
+    print(' === 比較情報===\n'+\
+          ' 入力1: ' + input1 + '\n' +\
+          ' 入力2: ' + input2 + '\n' +\
+          ' 出力 : ' + output)
+    
+    f_out.write(' === 比較情報===\n'+\
+                ' 入力1: ' + input1 + '\n' +\
+                ' 入力2: ' + input2 + '\n' +\
+                ' 出力 : ' + output + '\n' )
+    
+    print('\n === ここから「入力1」にのみ存在 === ')
+    f_out.write('\n === ここから「入力1」にのみ存在 === \n')
     for key in in1:
         if not key in in2 and len(key) > 0:
             print(key)
             f_out.write(key+'\n')
     
-    f_out.write('===ここから2ファイル目にのみ存在==='+'\n')
-    print('===ここから2ファイル目にのみ存在===')
+    print('\n === ここから「入力2」にのみ存在 === ')
+    f_out.write('\n === ここから「入力2」にのみ存在 === \n')
     for key in in2:
         if not key in in1 and len(key) > 0:
             print(key)
             f_out.write(key+'\n')
     
-    f_out.write('===終了==='+'\n')
-    print('===終了===')
+    print('\n === 終了 === ')
+    f_out.write('\n === 終了 === \n')
+    
+    f_in1.close()
+    f_in2.close()
+    f_out.close()
+    interval = 60
+    print('\n ' + str(interval) + '秒ほど画面を表示して、自動終了します。(強制終了:"Ctrl + C")' ) #"
+    time.sleep(interval)
     
 
 if __name__ == '__main__':
