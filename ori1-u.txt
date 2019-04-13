@@ -1,0 +1,16 @@
+この文章は
+改行されており、
+いい感じに
+行を入れ替えることで
+動作テストする
+ことができます。
+109 INFO: Building PKG (CArchive) out00-PKG.pkg
+1828 INFO: Rebuilding out00-EXE.toc because diff_all.exe missing
+1812 INFO: Building PKG (CArchive) out00-PKG.pkg completed successfully.
+1828 INFO: checking EXE
+1840 INFO: checking EXE
+1828 INFO: Building EXE from out00-EXE.toc
+1875 INFO: Building EXE from out00-EXE.toc completed successfully.
+109 INFO: checking PYZ
+109 INFO: checking PKG
+109 INFO: Building because toc changed
