@@ -5,7 +5,7 @@ from optparse import OptionParser
 import time
 
 def diff_all(input1, input2, output):
-    # 改行位置は気にせず、2つのファイルのdiffを取る
+    # 改行位置は気にせず、2つのファイルのdiffを取る！
     
     f_in1 = open(input1,'r')
     f_in2 = open(input2,'r')
